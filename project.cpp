@@ -3,13 +3,13 @@
 #include <cstdlib>
 #include <ctime>
 #include <thread>
-#include <chrono> // Untuk delay
+#include <chrono> 
 
-// Fungsi untuk mencetak teks dengan delay
+
 void printWithDelay(const std::string& text, int delayMs) {
     for (char c : text) {
         std::cout << c;
-        std::cout.flush(); // Pastikan teks langsung muncul
+        std::cout.flush(); 
         std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
     }
     std::cout << std::endl;
@@ -19,23 +19,23 @@ int main() {
     std::string nama1, nama2;
     int matchPercentage;
 
-    // Seed random number generator
+    
     std::srand(std::time(0));
 
-    // Input names
+     // memasukan nama1 dan nama2 
     std::cout << "Masukan nama pertama: ";
     std::getline(std::cin, nama1);
     std::cout << "masukan nama kedua: ";
     std::getline(std::cin, nama2);
 
-    // Custom match percentage for specific names
+    // Ini adalah function yang bisa di ubah sesuka hati presentase love nya
     if ((nama1 == "Alice" && nama2 == "Bob") || (nama1 == "Bob" && nama2 == "Alice")) {
-        matchPercentage = 95; // Predefined percentage
+        matchPercentage = 95; 
     } else {
-        matchPercentage = std::rand() % 101; // Random percentage
+        matchPercentage = std::rand() % 101; 
     }
 
-    // Determine description based on percentage
+    // untuk kata2 di range presentase tertentu
     std::string description;
     if (matchPercentage <= 5) {
         description = "Kurang cocok.";
@@ -49,15 +49,15 @@ int main() {
         description = "Pasangan sempurna!";
     }
 
-    // Output result with delay
+    
     std::string result = "\nMenghitung persentase love...\n";
-    printWithDelay(result, 50); // Animasi teks dengan delay 50ms
+    printWithDelay(result, 50); 
 
     std::string output = "Presentase kecocokan antara " + nama1 + " and " + nama2 + ": " 
                          + std::to_string(matchPercentage) + "% - " + description;
-    printWithDelay(output, 50); // Hasil akhir dengan animasi
+    printWithDelay(output, 50); 
 
-    // Hold CMD open
+   
     std::cout << "\nPress Enter to exit...";
     std::cin.get();
 
