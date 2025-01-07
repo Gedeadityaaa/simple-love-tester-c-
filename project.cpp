@@ -29,7 +29,7 @@ int main() {
     std::getline(std::cin, nama2);
 
     // Ini adalah function yang bisa di ubah sesuka hati presentase love nya
-    if ((nama1 == "Alice" && nama2 == "Bob") || (nama1 == "Bob" && nama2 == "Alice")) {
+    if ((nama1 == "Parta" && nama2 == "Shinta") || (nama1 == "Parta" && nama2 == "Shinta")) {
         matchPercentage = 95; 
     } else {
         matchPercentage = std::rand() % 101; 
@@ -46,19 +46,19 @@ int main() {
     } else if (matchPercentage <= 90) {
         description = "Sangat cocok.";
     } else {
-        description = "Pasangan sempurna!";
+        description = "sempurna!";
     }
 
     
     std::string result = "\nMenghitung persentase love...\n";
     printWithDelay(result, 50); 
 
-    std::string output = "Presentase kecocokan antara " + nama1 + " and " + nama2 + ": " 
+    std::string output = "Presentase kecocokan antara " + nama1 + " dan " + nama2 + ": " 
                          + std::to_string(matchPercentage) + "% - " + description;
     printWithDelay(output, 50); 
 
    
-    std::cout << "\nPress Enter to exit...";
+    std::cout << "\nTekan Enter untuk keluar dari program...";
     std::cin.get();
 
     return 0;
